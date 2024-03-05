@@ -1,19 +1,71 @@
 # Entities
 
-
-
 ## What components do 3DGS consist of?
 
-Let's see the original paper:
+Let's see [the description](https://github.com/graphdeco-inria/gaussian-splatting/?tab=readme-ov-file#overview) excerpted from the original manual:
 
 > The codebase has 4 main components:
+>
+> - A PyTorch-based optimizer to produce a 3D Gaussian model from SfM inputs.
+>
+> - A network viewer that allows to connect to and visualize the optimization process.
+>
+> - An OpenGL-based real-time viewer to render trained models in real-time.
+>
+> - A script to help you turn your own images into optimization-ready SfM data sets.
 
-> - A PyTorch-based optimizer to produce a 3D Gaussian model from SfM inputs. (Train)
+Let's explain each of them in detail.
 
-> - A network viewer that allows to connect to and visualize the optimization process. (Log)
+## Preprocessing
 
-> - An OpenGL-based real-time viewer to render trained models in real-time. (Render)
+> A script to help you turn your own images into optimization-ready SfM data sets.
 
-> - A script to help you turn your own images into optimization-ready SfM data sets. (Preprocess)
+Let's check out their repository. They've [told](https://github.com/graphdeco-inria/gaussian-splatting/?tab=readme-ov-file#processing-your-own-scenes) us to use [`COLMAP`](https://colmap.github.io/) and [`./convert.py`](https://github.com/graphdeco-inria/gaussian-splatting/blob/main/convert.py) to **process your own scenes**.
 
-Let's explain each of them in detail later.
+The repository structure looks like this now:
+
+```plaintext
+./
+|- convert.py
+```
+
+## Loading
+
+Between the phases of preprocessing and training, we need to load the data to initialize the model.
+
+Where does loading process happen? Let's check out their modules.
+
+This is the dependency graph of loader modules, where we can see that `colmap_loader` is the base loader:
+
+```mermaid
+flowchart BT
+  dataset_readers --> colmap_loader
+  render --> scene
+  train --> scene
+  scene --> dataset_readers
+```
+
+<!-- ```mermaid
+flowchart BT
+  gaussian_renderer --|> gaussian_model
+  metrics --|> lpipsPyTorch
+  full_eval --|> metrics
+  dataset_readers --|> colmap_loader
+  render --|> arguments
+  render --|> gaussian_renderer
+  render --|> scene
+  train --|> gaussian_renderer
+  train --|> scene
+  train --|> arguments
+  train --|> network_gui
+  network_gui --|> cameras
+  scene --|> gaussian_model
+  scene --|> arguments
+  scene --|> dataset_readers
+``` -->
+
+## Training
+
+## Evaluation
+
+## Rendering
