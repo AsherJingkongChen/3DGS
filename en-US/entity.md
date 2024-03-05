@@ -31,7 +31,7 @@ The repository structure looks like this now:
 
 ## Loading
 
-Between the phases of preprocessing and training, we need to load the data to initialize the model.
+After preprocessing and before training, we need to load the data and initialize the model.
 
 Where does loading process happen? Let's check out their modules.
 
