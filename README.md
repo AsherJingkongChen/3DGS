@@ -1,3 +1,3 @@
-# 3D Gaussian Splatting Related Researches
+# 3D Gaussian Splatting investigation
 
 ## [Entities (en-US)](./en-US/entity.md)
