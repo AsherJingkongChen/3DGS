@@ -1,0 +1,6 @@
+[submodule "external/original-reference"]
+	path = external/original-reference
+	url = https://github.com/graphdeco-inria/gaussian-splatting.git
+[submodule "external/efficient-gaussians"]
+	path = external/efficient-gaussians
+	url = https://github.com/Sharath-girish/efficientgaussian.git

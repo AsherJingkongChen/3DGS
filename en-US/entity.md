@@ -1,6 +1,6 @@
 # Entities
 
-## What components do 3DGS consist of?
+## What components does 3DGS consist of?
 
 Let's see [the description](https://github.com/graphdeco-inria/gaussian-splatting/?tab=readme-ov-file#overview) excerpted from the original manual:
 
@@ -44,25 +44,6 @@ flowchart BT
   train --> scene
   scene --> dataset_readers
 ```
-
-<!-- ```mermaid
-flowchart BT
-  gaussian_renderer --|> gaussian_model
-  metrics --|> lpipsPyTorch
-  full_eval --|> metrics
-  dataset_readers --|> colmap_loader
-  render --|> arguments
-  render --|> gaussian_renderer
-  render --|> scene
-  train --|> gaussian_renderer
-  train --|> scene
-  train --|> arguments
-  train --|> network_gui
-  network_gui --|> cameras
-  scene --|> gaussian_model
-  scene --|> arguments
-  scene --|> dataset_readers
-``` -->
 
 ## Training
 
