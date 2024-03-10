@@ -66,11 +66,11 @@ flowchart RL
     camera_utils --> graphics_utils
     camera_utils --> cameras
 
-    general_utils -.-> numpy
     general_utils -.-> torch
+    general_utils -.-> numpy
 
-    graphics_utils -.-> numpy
     graphics_utils -.-> torch
+    graphics_utils -.-> numpy
 
     image_utils -.-> torch
 
@@ -118,8 +118,8 @@ flowchart RL
     network_gui -.-> torch
     network_gui --> cameras
 
-    render -.-> torch
     render -.-> torchvision
+    render -.-> torch
     render --> utils
     render --> gaussian_model
     render --> gaussian_renderer
