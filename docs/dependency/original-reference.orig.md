@@ -97,10 +97,10 @@ flowchart RL
     dataset_readers --> utils
 
     gaussian_model --> utils
-    gaussian_model -.-> plyfile
+    gaussian_model -.-> torch
     gaussian_model -.-> numpy
     gaussian_model -.-> simple_knn
-    gaussian_model -.-> torch
+    gaussian_model -.-> plyfile
   end
   subgraph Metrics
     metrics -.-> lpipsPyTorch
