@@ -83,18 +83,18 @@ flowchart RL
     scene --> gaussian_model
     scene --> utils
 
-    cameras -.-> numpy
     cameras -.-> torch
+    cameras -.-> numpy
     cameras --> utils
 
     colmap_loader -.-> numpy
 
-    dataset_readers -.-> numpy
     dataset_readers -.-> Pillow
-    dataset_readers --> gaussian_model
-    dataset_readers -.-> plyfile
     dataset_readers --> colmap_loader
+    dataset_readers --> gaussian_model
     dataset_readers --> utils
+    dataset_readers -.-> numpy
+    dataset_readers -.-> plyfile
 
     gaussian_model --> utils
     gaussian_model -.-> torch
