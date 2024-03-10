@@ -11,8 +11,6 @@ flowchart RL
     numpy([numpy])
     Pillow([Pillow - PIL])
     plyfile([plyfile])
-    pymeshlab([pymeshlab])
-    scipy([scipy])
     simple_knn([simple_knn - CUDA])
     torch([torch])
     torchvision([torchvision])
