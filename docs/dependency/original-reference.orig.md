@@ -4,6 +4,7 @@
 - The feature modules are: `render` and `train`
 
 ```mermaid
+%%{init: { 'theme': 'neutral' }}%%
 flowchart BT
   gaussian_renderer --> gaussian_model
   metrics --> lpipsPyTorch
