@@ -1,0 +1,14 @@
+"""
+Prerequisites:
+- `mmdc`: Mermaid CLI
+  + Installation: `npm install -g @mermaid-js/mermaid-cli`
+"""
+
+from pathlib import Path
+from subprocess import run
+
+original_markdown_paths = Path.cwd().glob("**/*.orig.md")
+
+for orig_path in original_markdown_paths:
+    new_path = orig_path.parent / Path(orig_path.stem).with_suffix(".md")
+    run(["mmdc", "-i", orig_path, "-o", new_path], check=True)
