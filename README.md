@@ -1,4 +1,4 @@
-# 3D Gaussian Splatting investigation
+# 3D Gaussian Splatting
 
 > 3D [three·dee]
 > Gaussian [gau·see·uhn]
