@@ -1,10 +1,62 @@
 # [⎗](./README.md) Dependency - Original Reference
 
-- The curcial modules are: `arguments` and `gaussian_renderer`
-- The feature modules are: `render` and `train`
+## Overview
+
+- The modules can be categorized into the following groups:
+  - External
+  - Utility
+  - Argument
+  - Scene
+  - Metric
+  - Render
+  - Train
+  - Evaluation
+
+## Simplified Dependency Graph
 
 ```mermaid
-flowchart RL
+graph RL
+  x([External])
+  u(Utility)
+  a(Argument)
+  s(Scene)
+  m(Metric)
+  r(Render)
+  t(Train)
+  e(Evaluation)
+
+  m -.-> x
+  m --> u
+
+  u -.-> x
+
+  e --> m
+  e --> r
+  e --> t
+
+  t -.-> x
+  t --> r
+  t --> u
+
+  r --> s
+  t --> s
+
+  s -.-> x
+  r -.-> x
+  r --> u
+
+  s --> a
+  r --> a
+  t --> a
+
+  s --> u
+
+```
+
+## Detailed Dependency Graph
+
+```mermaid
+graph RL
   subgraph External
     diff_gaussian_rasterization([diff_gaussian_rasterization - CUDA])
     lpipsPyTorch([lpipsPyTorch])
@@ -15,7 +67,7 @@ flowchart RL
     torch([torch])
     torchvision([torchvision])
   end
-  subgraph Utilities
+  subgraph Utility
     utils
     camera_utils
     general_utils
@@ -25,7 +77,7 @@ flowchart RL
     sh_utils
     system_utils
   end
-  subgraph Arguments
+  subgraph Argument
     arguments
   end
   subgraph Scene
@@ -35,7 +87,7 @@ flowchart RL
     dataset_readers
     gaussian_model
   end
-  subgraph Metrics
+  subgraph Metric
     metrics
   end
   subgraph Render
@@ -50,7 +102,7 @@ flowchart RL
     full_eval
   end
 
-  subgraph Utilities
+  subgraph Utility
     utils --> camera_utils
     utils --> general_utils
     utils --> graphics_utils
@@ -100,7 +152,7 @@ flowchart RL
     gaussian_model -.-> simple_knn
     gaussian_model -.-> plyfile
   end
-  subgraph Metrics
+  subgraph Metric
     metrics -.-> lpipsPyTorch
     metrics -.-> Pillow
     metrics -.-> torch
