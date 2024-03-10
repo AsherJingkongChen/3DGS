@@ -1,4 +1,5 @@
 markdown: GFM
+mermaid: true
 name: 3D Gaussian Splatting
 remote_theme: pages-themes/slate
 title: null
