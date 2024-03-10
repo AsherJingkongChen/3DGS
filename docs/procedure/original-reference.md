@@ -1,6 +1,6 @@
-# Entities
+# [⎗](./README.md) Procedure - Original Reference
 
-## What components does 3DGS consist of?
+## What components does it consist of?
 
 Let's see [the description](https://github.com/graphdeco-inria/gaussian-splatting/?tab=readme-ov-file#overview) excerpted from the original manual:
 
