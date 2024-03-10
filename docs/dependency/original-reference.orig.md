@@ -61,10 +61,10 @@ flowchart RL
     utils --> sh_utils
     utils --> system_utils
 
-    camera_utils --> cameras
     camera_utils -.-> numpy
     camera_utils --> general_utils
     camera_utils --> graphics_utils
+    camera_utils --> cameras
 
     general_utils -.-> numpy
     general_utils -.-> torch
@@ -91,16 +91,16 @@ flowchart RL
 
     dataset_readers -.-> numpy
     dataset_readers -.-> Pillow
+    dataset_readers --> gaussian_model
     dataset_readers -.-> plyfile
     dataset_readers --> colmap_loader
-    dataset_readers --> gaussian_model
     dataset_readers --> utils
 
+    gaussian_model --> utils
     gaussian_model -.-> plyfile
     gaussian_model -.-> numpy
     gaussian_model -.-> simple_knn
     gaussian_model -.-> torch
-    gaussian_model --> utils
   end
   subgraph Metrics
     metrics -.-> lpipsPyTorch
