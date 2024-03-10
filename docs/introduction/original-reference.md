@@ -1,6 +1,6 @@
 # [⎗](./README.md) Introduction - Original Reference
 
-> [The Main Reference](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
+> [The main reference](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/)
 
 ## Why 3D Gaussian Splatting?
 
