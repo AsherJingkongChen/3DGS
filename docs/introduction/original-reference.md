@@ -13,11 +13,9 @@ Related works of 3D Gaussian Splatting are:
 
 ## Overview of 3D Gaussian Splatting
 
-3DGS utilizes a differentiable rasterizer to facilitate real-time projection into the image space.
+3D Gaussians are a set of ellipsoids with different color and opacity. Unlike neural networks in NeRF, the model is a explicit representation of the scene.
 
-The models are a set of ellipsoid with color and opacity.
-
-Once you have trained models, you can view rendered images by providing camera poses.
+Once you have trained models, you can render images from certain viewpoints by anisotropic volumetric "splatting" of 3D Gaussians onto a 2D plane.
 
 ## Be aware of
 
