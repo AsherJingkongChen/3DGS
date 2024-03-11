@@ -13,9 +13,11 @@ Related works of 3D Gaussian Splatting are:
 
 ## Overview of 3D Gaussian Splatting
 
-3D Gaussians are projective transformations of static points. It's a sort of explicit representation of volumetric data.
+3DGS utilizes a differentiable rasterizer to facilitate real-time projection into the image space.
 
-First, You train a 3D Gaussian model from Structure from Motion (SfM) inputs, and then you can render the trained model by giving it camera poses.
+The models are a set of ellipsoid with color and opacity.
+
+Once you have trained models, you can view rendered images by providing camera poses.
 
 ## Be aware of
 
