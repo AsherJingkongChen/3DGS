@@ -15,7 +15,9 @@ Related works of 3D Gaussian Splatting are:
 
 3D Gaussians are a set of ellipsoids with different color and opacity. Unlike neural networks in NeRF, the model is a explicit representation of the scene.
 
-Once you have trained models, you can render images from certain viewpoints by anisotropic volumetric "splatting" of 3D Gaussians onto a 2D plane.
+Once you have trained models, you can render images from certain viewpoints by anisotropic volumetric "splatting" of 3D Gaussians onto a 2D plane. 
+
+After that, 3DGS utilizes a differentiable tile-based rasterizer to blend 2D images together.
 
 ## Be aware of
 
