@@ -18,7 +18,7 @@ Make a any-GPU & COLMAP-free 3D scene reconstruction application with Gaussian s
 | ------- | ---------------------------------- |
 | &check; | Have a purpose                     |
 | &check; | Introduction - Original Reference  |
-| &cross; | Dependency - Original Reference    |
+| &check; | Dependency - Original Reference    |
 | &cross; | Procedure - Original Reference     |
 | &cross; | Introduction - Efficient Gaussians |
 | &cross; | Dependency - Efficient Gaussians   |
