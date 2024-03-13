@@ -16,6 +16,14 @@ Let's see [the description](https://github.com/graphdeco-inria/gaussian-splattin
 
 Let's explain each of them in detail.
 
+## Contents
+
+- [Preprocessing](#preprocessing)
+- [Loading](#loading)
+- [Training](#training)
+- [Evaluation](#evaluation)
+- [Rendering](#rendering)
+
 ## Preprocessing
 
 > A script to help you turn your own images into optimization-ready SfM data sets.
