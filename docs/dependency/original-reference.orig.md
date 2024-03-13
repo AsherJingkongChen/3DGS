@@ -16,45 +16,40 @@
 
 ```mermaid
 graph RL
-  subgraph Dependency
-    x([External])
-    u(Utility)
-    a(Argument)
-    s(Scene)
-    m(Metric)
-    r(Render)
-    t(Train)
-    e(Evaluation)
-  end
+  x([External])
+  u(Utility)
+  a(Argument)
+  s(Scene)
+  m(Metric)
+  r(Render)
+  t(Train)
+  e(Evaluation)
 
-  subgraph Dependency
-    m -.-> x
-    m --> u
+  m -.-> x
+  m --> u
 
-    u -.-> x
+  u -.-> x
 
-    e --> m
-    e --> r
-    e --> t
+  e --> m
+  e --> r
+  e --> t
 
-    t -.-> x
-    t --> r
-    t --> u
+  t -.-> x
+  t --> r
+  t --> u
 
-    r --> s
-    t --> s
+  r --> s
+  t --> s
 
-    s -.-> x
-    r -.-> x
-    r --> u
+  s -.-> x
+  r -.-> x
+  r --> u
 
-    s --> a
-    r --> a
-    t --> a
+  s --> a
+  r --> a
+  t --> a
 
-    s --> u
-  end
-
+  s --> u
 ```
 
 ## Detailed Dependency Graph
