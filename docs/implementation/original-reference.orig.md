@@ -35,7 +35,41 @@ The project uses a custom PyTorch extension to accelerate the computation of Gau
 ### Call Trace in Python modules
 
 1. All items from `diff_gaussian_rasterization`
-![diagram](./original-reference-1.svg)
+```mermaid
+graph TD
+  subgraph diff_gaussian_rasterization
+    GaussianRasterizer
+    GaussianRasterizationSettings
+  end
+  subgraph gaussian_renderer
+    render_function[render]
+  end
+  subgraph render
+    render_set
+    render_sets
+    __main__
+  end
+
+  render_function --> GaussianRasterizer
+  render_function --> GaussianRasterizationSettings
+  render_set --> render_function
+  render_sets --> render_set
+  __main__ --> render_sets
+```
 
 2. All items from `simple_knn`
-![diagram](./original-reference-2.svg)
+```mermaid
+graph TD
+  subgraph simple_knn
+    distCUDA2
+  end
+  subgraph gaussian_model
+    gm_cfd[GaussianModel.create_from_pcd]
+  end
+  subgraph scene.__init__
+    scene[Scene.__init__]
+  end
+
+  gm_cfd --> distCUDA2
+  scene --> gm_cfd
+```
