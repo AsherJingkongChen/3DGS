@@ -39,3 +39,12 @@ The project uses a custom PyTorch extension to accelerate the computation of Gau
 
 2. All items from `simple_knn`
 ![diagram](./original-reference-2.svg)
+
+---
+
+### Call Tree in CUDA C++ modules
+
+1. All items from `diff_gaussian_rasterization`
+
+2. All items from `simple_knn`
+![diagram](./original-reference-3.svg)

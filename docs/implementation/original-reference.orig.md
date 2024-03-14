@@ -85,3 +85,32 @@ graph TD
   training --> scene
   train_main --> training
 ```
+
+---
+
+### Call Tree in CUDA C++ modules
+
+1. All items from `diff_gaussian_rasterization`
+
+2. All items from `simple_knn`
+```mermaid
+graph TD
+  subgraph simple_knn
+    knn[SimpleKNN::knn]
+    boxMeanDist
+    boxMinMax
+    CustomMin
+    CustomMax
+    coord2Morton
+  end
+  subgraph spatial
+    distCUDA2
+  end
+
+  distCUDA2 --> knn
+  knn --> boxMeanDist
+  knn --> boxMinMax
+  knn --> CustomMin
+  knn --> CustomMax
+  knn --> coord2Morton
+```
