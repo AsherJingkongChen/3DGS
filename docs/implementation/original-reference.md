@@ -32,7 +32,7 @@ Some parts of the training process of 3D Gaussians is written in CUDA C++ to mak
 
 The project uses a custom PyTorch extension to accelerate the computation of Gaussian splatting. Specifically, it uses `diff_gaussian_rasterization` to render Gaussian splats and `simple_knn` to initialize from Point Cloud data.
 
-### Call Trace in Python modules
+### Call Tree in Python modules
 
 1. All items from `diff_gaussian_rasterization`
 ![diagram](./original-reference-1.svg)
