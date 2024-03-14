@@ -79,15 +79,9 @@ graph TD
     training
     train_main[__main__]
   end
-  subgraph render
-    render_sets
-    render_main[__main__]
-  end
 
   gm_cfd --> distCUDA2
   scene --> gm_cfd
   training --> scene
   train_main --> training
-  render_sets --> scene
-  render_main --> render_sets
 ```
