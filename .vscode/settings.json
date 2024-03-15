@@ -1,3 +1,9 @@
 {
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "files.associations": {
+    "*.env": "shellscript",
+    "limits": "cpp",
+    "algorithm": "cpp",
+    "complex": "cpp"
+  }
 }
