@@ -23,6 +23,7 @@ Let's explain each of them in detail.
 - [Training](#training)
 - [Evaluation](#evaluation)
 - [Rendering](#rendering)
+- [Extras](#extras)
 
 ## Preprocessing
 
@@ -52,3 +53,22 @@ This is the dependency graph of loader modules, where we can see that `colmap_lo
 ## Evaluation
 
 ## Rendering
+
+## Extras
+
+### Call Tree in Python modules
+
+1. All items from `diff_gaussian_rasterization`
+![diagram](./original-reference-2.svg)
+
+2. All items from `simple_knn`
+![diagram](./original-reference-3.svg)
+
+---
+
+### Call Tree in CUDA C++ modules
+
+1. All items from `diff_gaussian_rasterization`
+
+2. All items from `simple_knn`
+![diagram](./original-reference-4.svg)
