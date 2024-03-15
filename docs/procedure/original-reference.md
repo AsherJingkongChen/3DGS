@@ -69,6 +69,7 @@ This is the dependency graph of loader modules, where we can see that `colmap_lo
 ### Call Tree in CUDA C++ modules
 
 1. All items from `diff_gaussian_rasterization`
+![diagram](./original-reference-4.svg)
 
 2. All items from `simple_knn`
-![diagram](./original-reference-4.svg)
+![diagram](./original-reference-5.svg)

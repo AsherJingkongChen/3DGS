@@ -68,8 +68,15 @@ flowchart BT
 ```mermaid
 graph TD
   subgraph diff_gaussian_rasterization
-    GaussianRasterizer
     GaussianRasterizationSettings
+    GaussianRasterizer
+    _RasterizeGaussians
+    rasterize_gaussians
+  end
+  subgraph diff_gaussian_rasterization._C
+    mark_visible
+    rasterize_gaussians_c[rasterize_gaussians]
+    rasterize_gaussians_c_backward[rasterize_gaussians_backward]
   end
   subgraph gaussian_renderer
     render_function[render]
@@ -86,17 +93,25 @@ graph TD
 
   render_function --> GaussianRasterizer
   render_function --> GaussianRasterizationSettings
-  render_set --> render_function
-  render_sets --> render_set
+
   render_main --> render_sets
+  render_sets --> render_set
+  render_set --> render_function
+
   training --> render_function
   train_main --> training
+
+  _RasterizeGaussians --> rasterize_gaussians_c
+  _RasterizeGaussians --> rasterize_gaussians_c_backward
+  rasterize_gaussians --> _RasterizeGaussians
+  GaussianRasterizer --> rasterize_gaussians
+  GaussianRasterizer --> mark_visible
 ```
 
 2. All items from `simple_knn`
 ```mermaid
 graph TD
-  subgraph simple_knn
+  subgraph simple_knn._C
     distCUDA2
   end
   subgraph gaussian_model
@@ -121,6 +136,19 @@ graph TD
 ### Call Tree in CUDA C++ modules
 
 1. All items from `diff_gaussian_rasterization`
+```mermaid
+graph TD
+  subgraph cuda_rasterizer
+    subgraph rasterizer_impl
+    end
+    subgraph forward
+    end
+    subgraph backward
+    end
+  end
+  subgraph rasterize_points
+  end
+```
 
 2. All items from `simple_knn`
 ```mermaid
