@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 """
-Usage: python3 -m anafile <filenames...>
+Usage: python3 -m analyze_cxxfile <filenames...>
 
 Note: Not all function bodies are parsed completely.
 """
@@ -18,7 +18,7 @@ def get_cpp_function_impls_name_and_body(code: str) -> list[tuple[str, str]]:
 
 def get_cpp_invocations(body: str) -> list[str]:
     """Extracts the function invocations from a C++ function body."""
-    return re.findall(r"(\w+)\s*\([^)]*\)\s*;", body)
+    return re.findall(r"(\w+).*\([^)]*\)\s*;", body)
 
 
 def is_cpp_statement_keywords(term: str) -> bool:
