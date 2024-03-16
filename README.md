@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Make a any-GPU & COLMAP-free 3D scene reconstruction application with Gaussian splatting.
+Make a general 3D scene reconstruction framework with Gaussian splatting.
 
 ## Features
 
