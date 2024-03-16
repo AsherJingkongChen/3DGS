@@ -4,6 +4,7 @@
     "*.env": "shellscript",
     "limits": "cpp",
     "algorithm": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "tuple": "cpp"
   }
 }

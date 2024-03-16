@@ -47,7 +47,7 @@ Where does loading process happen? Let's check out their modules.
 This is the dependency graph of loader modules, where we can see that `colmap_loader` is the base loader:
 
 ```mermaid
-flowchart BT
+graph RL
   dataset_readers --> colmap_loader
   render --> scene
   train --> scene
@@ -66,7 +66,7 @@ flowchart BT
 
 1. All items from `diff_gaussian_rasterization`
 ```mermaid
-graph TD
+graph RL
   subgraph diff_gaussian_rasterization
     GaussianRasterizationSettings
     GaussianRasterizer
@@ -110,7 +110,7 @@ graph TD
 
 2. All items from `simple_knn`
 ```mermaid
-graph TD
+graph RL
   subgraph simple_knn._C
     distCUDA2
   end
@@ -137,22 +137,120 @@ graph TD
 
 1. All items from `diff_gaussian_rasterization`
 ```mermaid
-graph TD
-  subgraph cuda_rasterizer
-    subgraph rasterizer_impl
-    end
-    subgraph forward
-    end
-    subgraph backward
-    end
+graph RL
+  subgraph cuda_rasterizer/auxiliary.h
+    ndc2Pix
+    getRect
+    transformPoint4x3
+    transformPoint4x4
+    transformVec4x3
+    transformVec4x3Transpose
+    dnormvdz
+    dnormvdv
+    sigmoid
+    in_frustum
+  end
+  subgraph cuda_rasterizer/forward
+    computeColorFromSH_f[computeColorFromSH]
+    computeCov2D_f[computeCov2D]
+    computeCov3D_f[computeCov3D]
+    preprocessCUDA_f[preprocessCUDA]
+    preprocess_f[preprocess]
+    renderCUDA_f[renderCUDA]
+    render_f[render]
+  end
+  subgraph cuda_rasterizer/backward
+    computeColorFromSH_b[computeColorFromSH]
+    computeCov2D_b[computeCov2DCUDA]
+    computeCov3D_b[computeCov3D]
+    preprocessCUDA_b[preprocessCUDA]
+    preprocess_b[preprocess]
+    renderCUDA_b[renderCUDA]
+    render_b[render]
+  end
+  subgraph cuda_rasterizer/rasterizer_impl
+    backward
+    checkFrustum
+    duplicateWithKeys
+    BinningState::fromChunk
+    GeometryState::fromChunk
+    ImageState::fromChunk
+    getHigherMsb
+    identifyTileRanges
+    markVisible_cuda[markVisible]
+    forward
+    obtain
+    required
   end
   subgraph rasterize_points
+    resizeFunctional
+    RasterizeGaussiansCUDA
+    RasterizeGaussiansBackwardCUDA
+    markVisible
   end
+
+  computeCov2D_b --> transformPoint4x3
+
+  preprocessCUDA_b --> transformPoint4x4
+  in_frustum --> transformPoint4x4
+  in_frustum --> transformPoint4x3
+
+  computeColorFromSH_b --> dnormvdv
+
+  computeCov2D_b --> transformVec4x3Transpose
+
+  preprocessCUDA_b --> computeCov3D_b
+  preprocessCUDA_b --> computeColorFromSH_b
+  preprocess_b --> preprocessCUDA_b
+  preprocess_b --> computeCov2D_b
+ 
+  render_b --> renderCUDA_b
+
+  computeCov2D_f --> transformPoint4x3
+
+  preprocessCUDA_f --> transformPoint4x4
+  preprocessCUDA_f --> computeCov3D_f
+  preprocessCUDA_f --> computeCov2D_f
+  preprocessCUDA_f --> ndc2Pix
+  preprocessCUDA_f --> computeColorFromSH_f
+  preprocess_f --> preprocessCUDA_f
+
+  render_f --> renderCUDA_f
+
+  checkFrustum --> in_frustum
+  duplicateWithKeys --> getRect
+  markVisible_cuda --> checkFrustum
+
+  BinningState::fromChunk --> obtain
+  GeometryState::fromChunk --> obtain
+  ImageState::fromChunk --> obtain
+
+  forward --> required
+  backward --> GeometryState::fromChunk
+  forward --> GeometryState::fromChunk
+  backward --> ImageState::fromChunk
+  forward --> ImageState::fromChunk
+  forward --> preprocess_f
+  backward --> BinningState::fromChunk
+  forward --> BinningState::fromChunk
+  forward --> duplicateWithKeys
+  forward --> getHigherMsb
+  forward --> render_f
+
+  backward --> render_b
+  backward --> preprocess_b
+
+  RasterizeGaussiansCUDA --> resizeFunctional
+  RasterizeGaussiansCUDA --> forward
+
+  RasterizeGaussiansBackwardCUDA --> backward
+
+  markVisible --> markVisible_cuda
 ```
 
 2. All items from `simple_knn`
 ```mermaid
-graph TD
+graph RL
   subgraph simple_knn
     knn[SimpleKNN::knn]
     boxMeanDist
