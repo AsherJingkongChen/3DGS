@@ -64,7 +64,7 @@ graph RL
 
 ### Call Tree in Python modules
 
-1. All items from `diff_gaussian_rasterization`
+1. All items from [`diff_gaussian_rasterization`](https://github.com/graphdeco-inria/diff-gaussian-rasterization)
 ```mermaid
 graph RL
   subgraph diff_gaussian_rasterization
@@ -108,7 +108,7 @@ graph RL
   GaussianRasterizer --> mark_visible
 ```
 
-2. All items from `simple_knn`
+2. All items from [`simple_knn`](https://gitlab.inria.fr/bkerbl/simple-knn)
 ```mermaid
 graph RL
   subgraph simple_knn._C
@@ -135,7 +135,7 @@ graph RL
 
 ### Call Tree in CUDA C++ modules
 
-1. All items from `diff_gaussian_rasterization`
+1. All items from [`diff_gaussian_rasterization`](https://github.com/graphdeco-inria/diff-gaussian-rasterization)
 ```mermaid
 graph RL
   subgraph cuda_rasterizer/auxiliary.h
@@ -248,7 +248,7 @@ graph RL
   markVisible --> markVisible_cuda
 ```
 
-2. All items from `simple_knn`
+2. All items from [`simple_knn`](https://gitlab.inria.fr/bkerbl/simple-knn)
 ```mermaid
 graph RL
   subgraph simple_knn
