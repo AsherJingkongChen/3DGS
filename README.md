@@ -12,18 +12,19 @@ Make a any-GPU & COLMAP-free 3D scene reconstruction application with Gaussian s
 
 - [Documentation](./docs/README.md)
 
-## Status
+## Documentation Status
 
-| Status  | Description                          |
-| ------- | ------------------------------------ |
-| &check; | Have a purpose                       |
-| &check; | Introduction - Original Reference    |
-| &check; | Dependency - Original Reference      |
-| &cross; | Procedure - Original Reference       |
-| &cross; | Algorithm - Original Reference       |
-| &cross; | Implementation - Original Reference  |
-| &cross; | Introduction - Efficient Gaussians   |
-| &cross; | Dependency - Efficient Gaussians     |
-| &cross; | Procedure - Efficient Gaussians      |
-| &cross; | Algorithm - Original Reference       |
-| &cross; | Implementation - Efficient Gaussians |
+| Done    | Description                                          |
+| ------- | ---------------------------------------------------- |
+| &check; | Have a purpose                                       |
+| &check; | Introduction - Original Reference                    |
+| &check; | Dependency - Original Reference                      |
+| &cross; | Procedure - Original Reference                       |
+| &check; | Call Trees - Extras - Procedure - Original Reference |
+| &cross; | Algorithm - Original Reference                       |
+| &check; | Implementation - Original Reference                  |
+| &cross; | Introduction - Efficient Gaussians                   |
+| &cross; | Dependency - Efficient Gaussians                     |
+| &cross; | Procedure - Efficient Gaussians                      |
+| &cross; | Algorithm - Original Reference                       |
+| &cross; | Implementation - Efficient Gaussians                 |
