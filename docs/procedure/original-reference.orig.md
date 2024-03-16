@@ -108,7 +108,7 @@ graph RL
   GaussianRasterizer --> mark_visible
 ```
 
-2. All items from [`simple_knn`](https://gitlab.inria.fr/bkerbl/simple-knn)
+2. All items from [`simple_knn`](https://github.com/camenduru/simple-knn)
 ```mermaid
 graph RL
   subgraph simple_knn._C
@@ -248,7 +248,7 @@ graph RL
   markVisible --> markVisible_cuda
 ```
 
-2. All items from [`simple_knn`](https://gitlab.inria.fr/bkerbl/simple-knn)
+2. All items from [`simple_knn`](https://github.com/camenduru/simple-knn)
 ```mermaid
 graph RL
   subgraph simple_knn
