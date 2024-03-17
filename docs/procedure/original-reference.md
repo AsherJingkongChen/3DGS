@@ -58,18 +58,18 @@ This is the dependency graph of loader modules, where we can see that `colmap_lo
 
 ### Call Tree in Python modules
 
-1. All items from `diff_gaussian_rasterization`
+1. All items from [`diff_gaussian_rasterization`](https://github.com/graphdeco-inria/diff-gaussian-rasterization)
 ![diagram](./original-reference-2.svg)
 
-2. All items from `simple_knn`
+2. All items from [`simple_knn`](https://github.com/camenduru/simple-knn)
 ![diagram](./original-reference-3.svg)
 
 ---
 
 ### Call Tree in CUDA C++ modules
 
-1. All items from `diff_gaussian_rasterization`
+1. All items from [`diff_gaussian_rasterization`](https://github.com/graphdeco-inria/diff-gaussian-rasterization)
 ![diagram](./original-reference-4.svg)
 
-2. All items from `simple_knn`
+2. All items from [`simple_knn`](https://github.com/camenduru/simple-knn)
 ![diagram](./original-reference-5.svg)
