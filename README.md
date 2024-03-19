@@ -4,27 +4,22 @@
 > Gaussian [gau·see·uhn]
 > Splatting [spla·tuhng]
 
-## Purpose
+## Overview
 
-Make a general 3D scene reconstruction framework with Gaussian splatting.
+We are making a general 3D scene reconstruction framework with Gaussian splatting.
 
-## Features
+## Presents
 
-- [Documentation](./docs/README.md)
+### [Documentations (Click)](./ours/docs/README.md)
 
-## Documentation Status
+## Project Status
 
-| Done    | Description                                          |
-| ------- | ---------------------------------------------------- |
-| &check; | Have a purpose                                       |
-| &check; | Introduction - Original Reference                    |
-| &check; | Dependency - Original Reference                      |
-| &cross; | Procedure - Original Reference                       |
-| &check; | Call Trees - Extras - Procedure - Original Reference |
-| &cross; | Algorithm - Original Reference                       |
-| &check; | Implementation - Original Reference                  |
-| &cross; | Introduction - Efficient Gaussians                   |
-| &cross; | Dependency - Efficient Gaussians                     |
-| &cross; | Procedure - Efficient Gaussians                      |
-| &cross; | Algorithm - Original Reference                       |
-| &cross; | Implementation - Efficient Gaussians                 |
+| Item           | Stage             |
+| -------------- | ----------------- |
+| Previous Works | In Progress |
+| Objectives     | Just Started      |
+| Methods        | Will Start Soon   |
+| Development    | Not Decided Yet   |
+| Experiments    | Not Decided Yet   |
+| Deployment     | Not Decided Yet   |
+| Maintenance    | Active            |

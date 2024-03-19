@@ -9,8 +9,8 @@ Prerequisites:
 from pathlib import Path
 from subprocess import run
 
-old_image_paths = Path.cwd().glob("docs/**/*-*.svg")
-original_markdown_paths = Path.cwd().glob("docs/**/*.orig.md")
+old_image_paths = Path.cwd().glob("ours/docs/**/*-*.svg")
+original_markdown_paths = Path.cwd().glob("ours/docs/**/*.orig.md")
 list(map(Path.unlink, old_image_paths))
 
 for orig_path in original_markdown_paths:
