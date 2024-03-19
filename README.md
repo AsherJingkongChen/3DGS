@@ -1,4 +1,4 @@
-# 3D Gaussian Splatting
+# [3D Gaussian Splatting](https://github.com/AsherJingkongChen/3DGS)
 
 > 3D [three·dee]
 > Gaussian [gau·see·uhn]
