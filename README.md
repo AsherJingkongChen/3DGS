@@ -14,12 +14,12 @@ We are making a general 3D scene reconstruction framework with Gaussian splattin
 
 ## Project Status
 
-| Item           | Stage             |
-| -------------- | ----------------- |
-| Previous Works | In Progress |
-| Objectives     | Just Started      |
-| Methods        | Will Start Soon   |
-| Development    | Not Decided Yet   |
-| Experiments    | Not Decided Yet   |
-| Deployment     | Not Decided Yet   |
-| Maintenance    | Active            |
+| Item           | Stage           |
+| -------------- | --------------- |
+| Previous Works | In Progress     |
+| Objectives     | In Progress     |
+| Methods        | In Progress     |
+| Development    | Not Decided Yet |
+| Experiments    | Not Decided Yet |
+| Deployment     | Not Decided Yet |
+| Maintenance    | Active          |
