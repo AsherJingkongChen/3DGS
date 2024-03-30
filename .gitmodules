@@ -4,3 +4,6 @@
 [submodule "external/efficient-gaussians"]
 	path = external/efficient-gaussians
 	url = https://github.com/Sharath-girish/efficientgaussian.git
+[submodule "external/light-gaussian"]
+	path = external/light-gaussian
+	url = https://github.com/VITA-Group/LightGaussian.git
